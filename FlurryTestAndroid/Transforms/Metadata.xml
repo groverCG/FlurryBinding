@@ -1,0 +1,28 @@
+﻿<metadata>
+
+  <!-- remove internal namespaces -->
+  <remove-node path="/api/package[starts-with(@name, 'com.flurry.sdk')]" />
+
+  <remove-node path="/api/package[@name='com.flurry.android']/interface[@name='Constants']" />
+
+  <!-- use C# namespaces -->
+  <attr path="/api/package[@name='com.flurry.android']" name="managedName">Flurry.Analytics</attr>
+
+  <!-- hide internal members -->
+  <attr path="/api/package[@name='com.flurry.android']/class[@name='FlurryAgent']/method[@name='setGender']" name="visibility">internal</attr>
+
+  <!-- fix event name -->
+  <attr path="/api/package[@name='com.flurry.android']/class[@name='FlurryAgent']/method[@name='setFlurryAgentListener']" name="eventName"></attr>
+
+  <!-- fix enum name -->
+  <attr path="/api/package[@name='com.flurry.android']/class[@name='FlurryEventRecordStatus']/field[@name='kFlurryEventAnalyticsDisabled']" name="managedName">AnalyticsDisabled</attr>
+  <attr path="/api/package[@name='com.flurry.android']/class[@name='FlurryEventRecordStatus']/field[@name='kFlurryEventFailed']" name="managedName">Failed</attr>
+  <attr path="/api/package[@name='com.flurry.android']/class[@name='FlurryEventRecordStatus']/field[@name='kFlurryEventLogCountExceeded']" name="managedName">LogCountExceeded</attr>
+  <attr path="/api/package[@name='com.flurry.android']/class[@name='FlurryEventRecordStatus']/field[@name='kFlurryEventLoggingDelayed']" name="managedName">LoggingDelayed</attr>
+  <attr path="/api/package[@name='com.flurry.android']/class[@name='FlurryEventRecordStatus']/field[@name='kFlurryEventParamsCountExceeded']" name="managedName">ParamsCountExceeded</attr>
+  <attr path="/api/package[@name='com.flurry.android']/class[@name='FlurryEventRecordStatus']/field[@name='kFlurryEventRecorded']" name="managedName">Recorded</attr>
+  <attr path="/api/package[@name='com.flurry.android']/class[@name='FlurryEventRecordStatus']/field[@name='kFlurryEventUniqueCountExceeded']" name="managedName">UniqueCountExceeded</attr>
+
+</metadata>
+
+
